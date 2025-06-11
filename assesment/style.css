@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right top, #ffecd2, #fcb69f);
+  min-height: 100vh;
+  padding: 30px;
+  transition: background 0.4s ease;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.toggle-wrapper {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+
+
+.form-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.title-wrapper {
+  flex: 1 1 100%;
+  display: flex;
+  align-items: center;
+}
+
+#titleIcon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.form-section input,
+.form-section select {
+  flex: 1 1 45%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  outline: none;
+  border-color: #fc846b;
+  box-shadow: 0 0 5px rgba(252, 132, 107, 0.4);
+}
+
+#addBtn {
+  flex: 1 1 100%;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  padding: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#addBtn:hover {
+  transform: scale(1.05);
+}
+
+#toggleFilters {
+  background: #fce3d6;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.filter-section-wrapper {
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+}
+
+.filter-section-wrapper.closed {
+  max-height: 0;
+}
+
+.filter-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-section input {
+  flex: 1 1 45%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.expense-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.expense-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #fff;
+  padding: 16px;
+  border-left: 6px solid #ffa07a;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+.expense-card:hover {
+  transform: translateY(-2px);
+}
+
+.expense-card span {
+  flex: 1 1 25%;
+  font-size: 0.95rem;
+}
+
+.delete-btn {
+  background: #e63946;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  background: #c0292b;
+}
+
+.total-section {
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: right;
+  font-weight: bold;
+  color: #2e3a59;
+}
+
+.toast {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 12px;
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  transition: 0.4s ease;
+}
+.toast.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+body.dark {
+  background: linear-gradient(to top right, #232526, #414345);
+  color: white;
+}
+body.dark .container {
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+}
+body.dark input,
+body.dark select,
+body.dark button {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}
+body.dark .expense-card {
+  background: #2a2a2a;
+}
+body.dark .delete-btn {
+  background: #f44336;
+}
